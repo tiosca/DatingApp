@@ -48,16 +48,16 @@
                 > </textarea>
                 <h4 class="mt-2">Location Details:</h4>
                 <div class="d-flex flex-row align-items-center">
-                    <label for="city">City:</label>
-                    <input type="text" [(ngModel)] = "member.city" name="city" class="form-control mx-2">
-                    <label for="city">Country:</label>
-                    <input type="text" [(ngModel)] = "member.country" name="country" class="form-control mx-2">
+                    <label for="city-id">City:</label>
+                    <input type="text" [(ngModel)] = "member.city" name="city" id="city-id" class="form-control mx-2">
+                    <label for="country-id">Country:</label>
+                    <input type="text" [(ngModel)] = "member.country" name="country" id="country-id" class="form-control mx-2">
                 </div>
                 </form>
                 
             </tab>
             <tab heading = "Edit Photos">
-                <p>Photo edit will go here</p>
+                <app-photo-editor [member] = "member"></app-photo-editor>
             </tab>
         </tabset>
     </div>
