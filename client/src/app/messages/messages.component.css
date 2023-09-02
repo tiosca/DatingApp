@@ -1,0 +1,8 @@
+.img-circle {
+    max-height: 50px;
+}
+
+.row-with-borders {
+    border-top: 1px solid rgb(190, 190, 190);
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
