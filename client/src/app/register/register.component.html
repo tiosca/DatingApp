@@ -16,8 +16,31 @@
     <app-date-picker [formControl] = "$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'" [maxDate]="maxDate"></app-date-picker>
     <app-text-input [formControl] = "$any(registerForm.controls['city'])" [label]="'City'"></app-text-input>
     <app-text-input [formControl] = "$any(registerForm.controls['country'])" [label]="'Country'"></app-text-input>
-
-    <app-text-input [formControl] = "$any(registerForm.controls['password'])" [label]="'Password '" [type]="'password'"></app-text-input>
+    <div class="p-fluid mb-3">
+        <div class="p-field">
+          <p-password
+            formControlName="password"
+            [placeholder]="'Password'"
+            class="custom-password-input"
+          >
+            <ng-template pTemplate="header">
+              <h6>Pick a password</h6>
+            </ng-template>
+            <ng-template pTemplate="footer">
+              <p-divider></p-divider>
+              <p class="mt-2" [style.color]="isPasswordValid() ? 'green' : 'initial'">{{ isPasswordValid() ? 'This password is OK.' : 'Your password must have:' }}</p>
+              <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li *ngIf="!isLowerCasePresent()" style="color: red;">At least one lowercase</li>
+                <li *ngIf="!isUpperCasePresent()" style="color: red;">At least one uppercase</li>
+                <li *ngIf="!isSpecialCharPresent()" style="color: red;">At least one special character</li>
+                <li *ngIf="!isNumericPresent()" style="color: red;">At least one numeric</li>
+                <li *ngIf="!isPasswordLengthValid()" style="color: red;">Minimum 4 characters</li>
+              </ul>
+            </ng-template>
+          </p-password>
+        </div>
+      </div>
+    <!-- <app-text-input [formControl] = "$any(registerForm.controls['password'])" [label]="'Password '" [type]="'password'"></app-text-input> -->
     <app-text-input [formControl] = "$any(registerForm.controls['confirmPassword'])" [label]="'Confirm Password'" [type]="'password'"></app-text-input>
 
     <div class="row" *ngIf="validationErrors">

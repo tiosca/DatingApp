@@ -1,0 +1,7 @@
+:host ::ng-deep .custom-password-input .p-inputtext {
+    height: 40px !important;
+  }
+  
+.red-text{
+  color:red;
+}

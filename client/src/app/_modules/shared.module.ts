@@ -11,6 +11,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination'
 import { ButtonsModule } from 'ngx-bootstrap/buttons'
 import { TimeagoModule } from "ngx-timeago";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ModalModule } from "ngx-bootstrap/modal";
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    DividerModule,
+    PasswordModule
   ],
   exports: [
     BsDropdownModule,
@@ -44,7 +48,9 @@ import { ModalModule } from "ngx-bootstrap/modal";
     PaginationModule,
     ButtonsModule,
     TimeagoModule,
-    ModalModule
+    ModalModule,
+    DividerModule,
+    PasswordModule
   ]
 })
 export class SharedModule { }
